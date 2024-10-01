@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloripaTech | Social</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Seu código CSS aqui */
+       * {
+    margin: 0;
+    box-sizing: border-box;
+}
+      .image-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.image-section div {
+    flex: 1;
+    max-width: 300px; /* Ajuste conforme necessário */
+    margin: 10px;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Certifica-se de que a imagem não ultrapasse o tamanho máximo do contêiner */
+}
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    color: #D2691E;
+}
+
+header {
+    padding: 16px 5vw; /* Adjusted padding */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
+/* Restante do seu CSS... */
+
+nav {
+    padding: 0 5vw; /* Ajuste de padding */
+}
+
+ul {
+    padding: 0;
+    list-style: none; /* Remover estilos de lista padrão */
+    display: flex; /* Alinhar os itens em uma única linha */
+    justify-content: flex-end; /* Alinhar os itens à direita */
+}
+
+li {
+    font-weight: bold;
+    margin: 0 10px;
+    white-space: nowrap; /* Evitar quebras de linha */
+}
+
+a {
+    text-decoration: none; /* Remover sublinhado de links */
+    color: #D2691E; /* Adicionar cor aos links */
+}
+
+/* Adicionalmente, você pode adicionar a seguinte regra para aumentar o espaçamento entre os itens do header */
+li:not(:last-child) {
+    margin-right: 20px;
+}
+
+/* Adicionar uma classe especial para o primeiro item do header */
+.header-item {
+    white-space: nowrap; /* Evitar quebras de linha */
+    margin-right: 20px; /* Espaçamento entre itens */
+    color: #D2691E; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    text-decoration: none; /* Remover sublinhado de links */
+}
+
+
+section,
+footer {
+    display: flex;
+    flex-direction: column; /* Adjusted to column for better responsiveness */
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid none;
+    padding: 5vw; /* Adjusted padding */
+}
+
+section p {
+    line-height: 24px;
+    width: 100%; /* Adjusted width */
+    margin: 0; /* Remove default margin */
+}
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 600px) {
+    header {
+        padding: 16px 10vw; /* Adjusted padding */
+    }
+    
+    nav {
+        padding: 0 10vw; /* Adjusted padding */
+    }
+
+    section {
+        flex-direction: row; /* Adjusted to row for better responsiveness */
+    }
+
+        section#sec00 {
+    background-image: url('https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/9132d9e9-0624-4036-9fdf-756389764984.image.png?v=1700180779220');
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 20%; /* Use uma porcentagem responsiva em vez de uma altura fixa */
+    text-align: center;
+}
+
+        section#sec01 p {
+            margin: 16px 0 24px 0;
+        }
+
+        section#sec02 {
+    background-color: black;
+    color: white; /* Adicionado para definir a cor do texto como branco */
+}
+
+section#sec02 p {
+    margin-top: 16px;
+}
+
+section#sec02 h2,
+section#sec02 p {
+    margin-left: 15%;
+}
+
+        h2 {
+            font-size: 32px;
+        }
+
+        section#sec03 p {
+            margin: 16px 0 24px 0;
+        }
+
+        section#sec04 {
+            background-image: linear-gradient( to right, black, white );
+        }
+
+        section#sec04 p {
+            margin-top: 16px;
+        }
+
+        section#sec04 h2,
+        section#sec04 p {
+            margin-left: 15%;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        section#sec05 {
+            background-color: black;
+        }
+
+        section#sec05 p {
+            margin-top: 16px;
+        }
+
+        section#sec05 h2,
+        section#sec05 p {
+            margin-left: 15%;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        button {
+            border: none;
+            padding: 16px 32px;
+            background-color: #D2691E;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #painel {
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: 200ms;
+        }
+
+        #painel.fechado {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #painel.aberto {
+            opacity: 1;
+        }
+
+        #painel .conteudo {
+            background-color: white;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+            padding: 5vw;
+            width: 50%;
+            height: 100%;
+            transition: 500ms;
+        }
+
+        #painel.fechado .conteudo {
+            margin-left: 100%;
+        }
+
+        #painel.aberto .conteudo {
+            margin-left: 50%;
+        }
+
+        #painel .perfil {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #painel .perfil img {
+            border-radius: 50%;
+            width: 200px;
+        }
+
+        #painel .perfil p {
+            text-indent: 50px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+
+        #painel .fechar {
+            font-weight: bold;
+            background-color: #D2691E;
+            color: white;
+            padding: 5px 20px 5px 10px;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        painel .social {
+            margin-top: 16px;
+        }
+
+        painel .social img {
+            max-widht: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Seu conteúdo HTML aqui -->
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloripaTech | Social</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="header-item">FloripaTech | Social</h1>
+        <nav>
+            <ul>
+                <li class="ativo"><a href="index.html">Início</a></li>
+                <li class="ativo"><a href="https://cedup-jl.glitch.me/" target="_blank">CEDUP JL</a></li>
+                <li class="ativo"><a href="https://gg.gg/geonota10" target="_blank">Geo Nota 10</a></li>
+                <li class="ativo"><a href="https://www.youtube.com/watch?v=4p7axLXXBGU&t=1s" target="_blank">Python</a></li>
+                <li class="ativo"><a href="https://www.youtube.com/watch?v=UFGe25gydxo" target="_blank">Power BI</a></li>
+                <li class="ativo"><a href="https://www.youtube.com/watch?v=xW7tIsvBcp0" target="_blank">Word</a></li>
+                <li class="ativo"><a href="https://www.youtube.com/watch?v=rdPZwdTI2FU" target="_blank">Excel</a></li>
+                <!-- <li><a onclick="abrirPainel()">Sobre</a></li> --> 
+          </ul>
+        </nav>
+    </header>
+
+    <nav class="dp-menu">
+        <ul>
+            <li class="ativo"><a href="index.html">Início</a></li>
+            <li><a href="#lINK">Identificação</a>
+                <ul>
+                    <li><a href="page1.html">Página1</a></li>
+                    <li><a href="page2.html">Página2</a></li>
+                    <li><a href="page3.html">Página3</a></li>
+                    <li><a href="page4.html">Página4</a></li>
+                    <li><a href="page5.html">Página5</a></li>
+                    <li><a href="page6.html">Página5</a></li>
+                                  </ul>
+            </li>
+            <li><a href="#">Contato</a></li>
+            <li><a onclick="abrirPainel()">Quem somos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="sec00"></section>
+
+        <section id="sec01">
+          <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Desigualdades%20Sociais%20em%20Florian%C3%B3polis_%20Um%20Retrato%20da%20Cidade.pdf?v=1700572381537" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/WhatsApp%20Image%202023-11-18%20at%2008.33.54.jpeg?v=1700308262439" style="width: 100%; float: right;">
+        </a>
+    </div>
+    <div>
+        <h2>Desigualdades Sociais em Florianópolis: Um Retrato da Cidade</h2>
+        <p>Clique na imagem ao lado para ter acesso ao artigo</p>
+        <!-- <p>Digite aqui o seu texto</p> -->
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Desigualdades%20Sociais%20em%20Florian%C3%B3polis_%20Um%20Retrato%20da%20Cidade.pdf?v=1700572381537" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/b19f62a7-56a9-4f41-b8ec-5543f1c396af.jfif?v=1700308259505" style="width: 100%; float: right;">
+        </a>  
+         </div> 
+          
+        </section>
+
+       <section id="sec02" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+    <div style="flex: 1; max-width: 600px; margin: 10px;">
+        <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/o_Jz6fD7WZs" title="Desigualdades Sociais em Florianópolis - Um Retrato da Cidade. @studionte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div style="flex: 1; max-width: 600px; margin: 10px;">
+        <h2>FloripaTech Social</h2>
+        <p><b>Transformando Desigualdades<br> em Oportunidades!</b></p>
+        <p>"Conectando Talentos, Inspirando Futuros:<br> 
+        FloripaTech Social, onde a tecnologia<br> e a igualdade 
+        se encontram<br> na Ilha da Magia!"</p>
+    </div>
+
+    <div style="flex: 1; max-width: 600px; margin: 10px;">
+        <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/o_Jz6fD7WZs" title="Desigualdades Sociais em Florianópolis - Um Retrato da Cidade. @studionte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+</section>
+
+
+
+      <section id="sec03" class="image-section">
+    <div>
+       <a target="_blank" href="https://anaconda.cloud/share/notebooks/069bb149-c976-4815-aad6-e2b046f00870/preview"><button>Projeto 4</button></a>
+
+
+
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/images%20(2).png?v=1700519183222" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/images%20(2).png?v=1700519183222" alt="Imagem 2">
+        </a>
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/images.png?v=1700519180414" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/images.png?v=1700519180414" alt="Imagem 3">
+        </a>
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/images%20(2).jpeg?v=1700519182745" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/images%20(2).jpeg?v=1700519182745" alt="Imagem 4">
+        </a>
+    </div>
+</section>
+
+<section id="sec04" class="image-section">
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/download.png?v=1700519180901" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/download.png?v=1700519180901" alt="Imagem 5">
+        </a>
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Word.jpg?v=1700523017684" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Word.jpg?v=1700523017684" alt="Imagem 6">
+        </a>
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Scala.jpg?v=1700521400531" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Scala.jpg?v=1700521400531" alt="Imagem 7">
+        </a>
+    </div>
+    <div>
+        <a href="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Julia.jpg?v=1700521871356" target="_blank">
+            <img src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Julia.jpg?v=1700521871356" alt="Imagem 8">
+        </a>
+    </div>
+</section>
+
+       <section id="sec05">
+    <div>
+        <iframe width="550" height="400" src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/Curtas%20para%20Youtube%20Podcast%20Colagem%20Vermelho%20e%20Azul.mp4?v=1700686015549" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        <iframe width="550" height="400" src="https://cdn.glitch.global/93a2c0c2-de18-4aff-ad05-39a2043f9930/V%C3%ADdeos%20Curtos%20para%20YouTube%20de%20Tecnologia%20Glitch%20Preto%20e%20Roxo.mp4?v=1700686008155" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</section>
+
+
+               </main>
+
+
+             <!-- Rodapé -->
+             <footer>
+               <span><b>2023 - Página desenvolvida para o Desafio dos Dados&#169; </b></span>
+             </footer>
+
+
+               <!-- Painel ocultável -->
+         
+            <!--  <body>
+              <div id="painel" class="fechado">
+                <div class="conteudo">
+                  <a class="fechar" onclick= "fecharPainel()"> &lt;Fechar</a>
+                  <h2>Sobre mim</h2> 
+                    <div class="perfil">
+                      <img src="https://cdn.glitch.me/2f7df976-bb96-429b-a324-3fdabdca5e03%2FPhotIvan.bmp?v=1634258453520" alt="ivan.perfil">
+                     <p>
+                      <b>Prof. Ivan Melo</b>
+                      </p>
+                      <p>
+                        Sou graduado em Geografia pela UFSC (Licenciatura e Bacharelado), tenho 
+                        Pós-Graduação em Gestão Escolar e Especialização em Ciência de Dados e Inteligência Artificial pela UNIASSELVI .<br> 
+                        </p>
+                      <p>
+                        Em maio de 2015 assumi a posição de chefia no NTE (Núcleo de Tecnologia Educacional) no Instituto Estadual de Educação e, atualmente, 
+                        também estou na função de Professor de Desenvolvimento Web no CEDUP - JL (Centro de Educação profissional 
+                        Dr. Jorge Lacerda)
+                      </p><br><br>
+                      <div class="social">
+                        <a href= ""></a><img src="">
+                        <a href= ""></a><img src="">
+                        <a href= ""></a><img src="">
+                        
+                        <a href="https://geonota10.wix.com/enem" target="_blank"><img src="https://cdn.glitch.me/2f7df976-bb96-429b-a324-3fdabdca5e03%2Ficonmonstr-linkedin-3.svg?v=1634141935963"></a>
+                        <a href="http://iee.sed.sc.gov.br" target="_blank"><img src="https://cdn.glitch.me/2f7df976-bb96-429b-a324-3fdabdca5e03%2Ficonmonstr-facebook-6.svg?v=1634141948821"></a>
+                             <a href="http://google.com" target="_blank"><img src="https://cdn.glitch.me/2f7df976-bb96-429b-a324-3fdabdca5e03%2Ficonmonstr-instagram-13.svg?v=1634141972620"></a> 
+                    </div>
+                    </div>
+                  
+                </div>
+              </div>
+              
+              <script src="script.js">
+              function abrirPainel () {document.getElementById('painel').className = 'aberto';}
+              function fecharPainel () {document.getElementById('painel').className = 'fechado';}
+                       
+              
+              </script>
+             </body> -->
+</html>
